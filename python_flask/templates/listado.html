@@ -1,0 +1,32 @@
+{%extends "index.html" %}
+
+{%block body%}
+  <table class="table table-bordered">
+    <tr>
+      <th></th>
+      <th>email</th>
+      <th>nombres</th>
+      <th>apellidos</th>
+      <th>password</th>
+      <th>seccion</th>
+      <th>rut</th>
+      <th>Habilitado</th>
+    </tr>
+    {%for usuario in usuarios%}
+      <tr>
+        <td>
+          <a href="/usuarios/delete/{{usuario._id}}" title="Eliminar Usuario" class="delete_user"><i class="fa fa-trash"></i> Eliminar</a>
+          <a href="/usuarios/update/{{usuario._id}}" title="Editar Usuario"><i class="fa fa-pencil"></i> editar</a>
+          <a href="/usuarios/view/{{usuario._id}}" title="Ver usuario"><i class="fa fa-eye"></i> ver</a>
+        </td>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.nombres }}</td>
+        <td>{{ usuario.apellidos }}</td>
+        <td>{{ usuario.password }}</td>
+        <td>{{ usuario.seccion }}</td>
+        <td>{{ usuario.rut }}</td>
+        <td>{{ usuario.estado }}</td>
+      </tr>
+    {%endfor%}
+    </table>
+{%endblock%}
