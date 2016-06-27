@@ -34,7 +34,13 @@ router.get('/', function(req, res) {
 router.route('/usuarios')
   .post(function(req, res) {
     var usuario = new Usuario();
-    usuario.name = req.body.name;
+    if (req.body.email) usuario.email = req.body.email
+    if (req.body.nombres) usuario.nombres = req.body.nombres
+    if (req.body.apellidos) usuario.apellidos = req.body.apellidos
+    if (req.body.password) usuario.password = req.body.password
+    if (req.body.seccion) usuario.seccion = req.body.seccion
+    if (req.body.rut) usuario.rut = req.body.rut
+    if (req.body.estado) usuario.estado = req.body.estado
     usuario.save(function(err) {
       if (err)
         res.send(err);
@@ -59,7 +65,14 @@ router.route('/usuarios/:usuario_id')
   .put(function(req, res) {
     Usuario.findById(req.params.usuario_id, function(err, usuario) {
       if (err) res.send(err);
-      usuario.name = req.body.name;  // update the usuarios info
+      if (req.body.email) usuario.email = req.body.email
+      if (req.body.nombres) usuario.nombres = req.body.nombres
+      if (req.body.apellidos) usuario.apellidos = req.body.apellidos
+      if (req.body.password) usuario.password = req.body.password
+      if (req.body.seccion) usuario.seccion = req.body.seccion
+      if (req.body.rut) usuario.rut = req.body.rut
+      if (req.body.estado) usuario.estado = req.body.estado
+
       usuario.save(function(err) {
         if (err) res.send(err);
         res.json({ message: 'usuario updated!' });
