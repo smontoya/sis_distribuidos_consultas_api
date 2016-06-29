@@ -19,18 +19,27 @@
 
  ?>
 
-  <a href="index.php">Indice</a>
+<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 
-  <form method="post" name="formActualizar" />
-    <table class="table table-bordered">
-    <th>Email</th>
-    <th>Nombres</th>
-    <th>Apellidos</th>
-    <tr>
-      <td><input type="text" name="email"  /></td>
-      <td><input type="text" name="nombres"  /></td>
-      <td><input type="text" name="apellidos"  /></td>
-    </tr>
-    </table>
-    <input type="submit" value="Crear usuario">
+<div class="jumbotron">
+<h1>Crear usuario</h1>  
+</div>
+  <form method="post" name="formActualizar" class="well" />
+    <div class="row">
+      <label class="col-md-3">Email</label>
+      <input class="col-md-8" type="text" name="email"  />
+    </div>
+    
+    <div class="row">
+      <label class="col-md-3">Nombres</label>
+      <input class="col-md-8" type="text" name="nombres"  />
+    </div>
+    
+    <div class="row">
+      <label class="col-md-3">Apellidos</label>
+      <input class="col-md-8" type="text" name="apellidos"  />
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Crear usuario </button>
   </form>
+  <a href="index.php" class="btn btn-primary">Volver a listado</a>
