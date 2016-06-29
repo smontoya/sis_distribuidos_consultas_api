@@ -17,6 +17,7 @@ def usuarios():
 def get_usuario(user_id):
     url = "http://localhost:8080/api/usuarios/%s" % user_id
     req = requests.get(url)
+    print(url)
     return render_template('/show.html', usuario=req.json())
 
 @app.route("/usuarios/delete/<user_id>")

@@ -59,7 +59,7 @@ router.route('/usuarios/:usuario_id')
   .put(function(req, res) {
     Usuario.findById(req.params.usuario_id, function(err, usuario) {
       if (err) res.send(err);
-      usuario.name = req.body.name;  // update the usuarios info
+      usuario.nombres = req.body.nombres;
       usuario.save(function(err) {
         if (err) res.send(err);
         res.json({ message: 'usuario updated!' });
