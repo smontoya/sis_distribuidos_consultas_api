@@ -1,0 +1,30 @@
+{%extends "index.html" %}
+
+{%block body%}
+<div class="jumbotron">
+  <h1>Actualizar usuario</h1>  
+</div>
+<form method="post" class="well" />
+  <div class="row">
+    <label class="col-md-3">Email</label>
+    <input class="col-md-8" type="text" name="email" value="{{usuario.get('email')}}" />
+  </div>
+  
+  <div class="row">
+    <label class="col-md-3">Nombres</label>
+    <input class="col-md-8" type="text" name="nombres" value="{{usuario.get('nombres')}}">
+  </div>
+  
+  <div class="row">
+    <label class="col-md-3">Apellidos</label>
+    <input class="col-md-8" type="text" name="apellidos" value="{{usuario.get('apellidos')}}" />
+  </div>
+
+  
+  <button type="submit" class="btn btn-primary">Actualizar usuario </button>
+</form>
+<a href="/usuarios" class="btn btn-primary">Volver al listado</a>
+  
+{%endblock%}
+
+
