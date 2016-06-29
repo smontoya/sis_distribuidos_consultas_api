@@ -1,1 +1,25 @@
-{{usuario}}
+{%extends "index.html" %}
+
+{%block body%}
+  <table class="table table-bordered">
+    <tr>
+      <th>email</th>
+      <th>nombres</th>
+      <th>apellidos</th>
+      <th>password</th>
+      <th>seccion</th>
+      <th>rut</th>
+      <th>Habilitado</th>
+    </tr>
+      <tr>
+        <td>{{ usuario.email }}</td>
+        <td>{{ usuario.nombres }}</td>
+        <td>{{ usuario.apellidos }}</td>
+        <td>{{ usuario.password }}</td>
+        <td>{{ usuario.seccion }}</td>
+        <td>{{ usuario.rut }}</td>
+        <td>{{ usuario.estado }}</td>
+      </tr>
+    </table>
+    <a href="/usuarios" class="btn btn-primary">Volver al listado</a>
+{%endblock%}

@@ -7,17 +7,27 @@
 <form method="post" class="well" />
   <div class="row">
     <label class="col-md-3">Email</label>
-    <input class="col-md-8" type="text" name="email" value="{{usuario.get('email')}}" />
+    <input class="col-md-8" type="email" name="email" value="{{usuario.get('email')}}" />
   </div>
   
   <div class="row">
     <label class="col-md-3">Nombres</label>
-    <input class="col-md-8" type="text" name="nombres" value="{{usuario.get('nombres')}}">
+    <input class="col-md-8" type="text" name="nombres" value="{{usuario.get('nombres')}}" />
   </div>
   
   <div class="row">
     <label class="col-md-3">Apellidos</label>
     <input class="col-md-8" type="text" name="apellidos" value="{{usuario.get('apellidos')}}" />
+  </div>
+  
+  <div class="row">
+    <label class="col-md-3">Sección</label>
+    <input class="col-md-8" type="text" name="seccion" value="{{usuario.get('seccion')}}" />
+  </div>
+  
+  <div class="row">
+    <label class="col-md-3">RUN</label>
+    <input class="col-md-8" type="text" name="rut" value="{{usuario.get('rut')}}" />
   </div>
 
   

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, flash, request
+from flask import Flask, render_template, redirect, flash, request, url_for
 app = Flask(__name__)
 import requests
 import json
@@ -23,8 +23,8 @@ def get_usuario(user_id):
 def del_usuario(user_id):
     url = "http://localhost:8080/api/usuarios/%s" % user_id
     req = requests.delete(url)
-    flash("Usuario eliminado")
-    return redirect(url_for(usuarios))
+    flash(req.json().get("message"))
+    return redirect(url_for('usuarios'))
 
 @app.route("/usuarios/update/<user_id>", methods=['GET', 'POST'])
 def update_usuario(user_id):
@@ -32,7 +32,9 @@ def update_usuario(user_id):
         parametros = {
             'email': request.form.get("email"),
             'nombres': request.form.get("nombres"),
-            'apellidos': request.form.get("apellidos")
+            'apellidos': request.form.get("apellidos"),
+            'seccion': request.form.get("seccion"),
+            'rut': request.form.get("rut")
         }
         url = "http://localhost:8080/api/usuarios/%s" % user_id
         req = requests.put(url, data=parametros)
@@ -49,7 +51,9 @@ def create_usuario():
         parametros = {
             'email': request.form.get("email"),
             'nombres': request.form.get("nombres"),
-            'apellidos': request.form.get("apellidos")
+            'apellidos': request.form.get("apellidos"),
+            'seccion': request.form.get("seccion"),
+            'rut': request.form.get("rut")
         }
         url = "http://localhost:8080/api/usuarios/"
         req = requests.post(url, data=parametros)
