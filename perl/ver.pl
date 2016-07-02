@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 use LWP::Simple;
-use JSON;
+use JSON::PP;
 
 # $usuario = decode_json(get("http://localhost:8080/api/usuarios/123"));
 
