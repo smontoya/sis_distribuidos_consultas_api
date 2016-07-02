@@ -18,7 +18,11 @@ print "<th>Apellidos</th>";
 foreach my $item( @$usuarios ) { 
  print "
  	<tr>
- 		<td> <a href='/ver.pl?user_id=$item->{_id}'>Ver</a></td>
+ 		<td> 
+      <a href='/eliminar.pl?user_id=$item->{_id}'>Eliminar</a>
+      <a href='/editar.pl?user_id=$item->{_id}'>Editar</a>
+      <a href='/ver.pl?user_id=$item->{_id}'>Ver</a>
+    </td>
  		<td> $item->{email} </td>
  		<td> $item->{nombres} </td>
  		<td> $item->{apellidos} </td>
