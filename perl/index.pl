@@ -5,10 +5,11 @@ use JSON::PP;
 $usuarios = decode_json(get("http://localhost:8080/api/usuarios"));
 
 
-print "Content-type: text/html\n\n";
-print "<html><head>\n";
-print "<title>CGI Test</title>\n";
-print "</head>\n";
+print "Content-type: text/html\n";
+print "<html><head>\n
+           <title>Listado de usaurios</title>
+           <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
+         </head>\n";
 print "<body>";
 print "<table class='table table-bordered'>";
 print "<th></th>";

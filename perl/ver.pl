@@ -11,6 +11,8 @@ print "Content-type: text/html\n
 <html>
   <head>
     <title>Editar usuario</title>
+    <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
+
   </head>\n
   <body>
 	  <table class='table table-bordered'>

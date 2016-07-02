@@ -11,6 +11,7 @@ print "Content-type: text/html\n
 <html>
   <head>
     <title>Editar usuario</title>
+    <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
   </head>\n
   <body>
 	<form method='POST'>
@@ -24,7 +25,7 @@ print "Content-type: text/html\n
  		  <td> <input type='text' value='$usuario->{apellidos}' name='apellidos'/> </td>
 	    </tr>
       </table>
-	  <button type='submit'>Actualizar Usuario</button> 
+	  <button type='submit' class='btn btn-primary'>Actualizar Usuario</button> 
 	</form>
   </body>
 </html>";
