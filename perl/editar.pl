@@ -7,24 +7,24 @@ my $user_id = $query->param('user_id');
 
 $usuario= decode_json(get("http://localhost:8080/api/usuarios"."/".$user_id));
 
-print "Content-type: text/html\n\n";
-print "<html><head>\n";
-print "<title>CGI Test</title>\n";
-print "</head>\n
+print "Content-type: text/html\n
+<html>
+  <head>
+    <title>Editar usuario</title>
+  </head>\n
   <body>
-	<form method='POST' name='formulario'>";
-
-print "<table class='table table-bordered'>";
-print "<th>Email</th>";
-print "<th>Nombres</th>";
-print "<th>Apellidos</th>
-<tr>
- 		<td> <input type='text' value='$usuario->{email}' name='email' /> </td>
- 		<td> <input type='text' value='$usuario->{nombres}' value='nombres'/> </td>
- 		<td> <input type='text' value='$usuario->{apellidos}' value='apellidos'/> </td>
-	</tr>";
- 
-print "</table>
-		<input type='submit' value='Actualizar Usuario' /> 
-	</form>";
-print "</body>";
+	<form method='POST'>
+	  <table class='table table-bordered'>
+	  	<th>Email</th>
+	  	<th>Nombres</th>
+	  	<th>Apellidos</th>
+	    <tr>
+ 		  <td> <input type='text' value='$usuario->{email}' name='email' /> </td>
+ 		  <td> <input type='text' value='$usuario->{nombres}' name='nombres'/> </td>
+ 		  <td> <input type='text' value='$usuario->{apellidos}' name='apellidos'/> </td>
+	    </tr>
+      </table>
+	  <button type='submit'>Actualizar Usuario</button> 
+	</form>
+  </body>
+</html>";
