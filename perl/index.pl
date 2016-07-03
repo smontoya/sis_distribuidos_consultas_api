@@ -31,5 +31,6 @@ foreach my $item( @$usuarios ) {
  	";
  
 }
-print "</table>";
+print "</table>
+    <a href='crear.pl' class='btn btn-primary'>Crear usuario</a>";
 print "</body>";
