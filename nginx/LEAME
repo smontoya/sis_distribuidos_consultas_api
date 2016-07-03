@@ -1,0 +1,10 @@
+Instrucciones de configuración de NGInX:
+
+Instalar fcgiwrap
+
+Configurar nginx con el archivo predeterminado que viene en el manual en el siguiente enlace:
+https://www.nginx.com/resources/wiki/start/topics/examples/fcgiwrap/
+
+Crear el bloque para la configuración del servidor web, soporte para archivos .pl, este archivo esta en esta misma carpeta, perl.
+
+
