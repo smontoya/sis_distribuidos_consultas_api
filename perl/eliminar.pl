@@ -2,6 +2,7 @@
 use LWP::Simple;
 use JSON::PP;
 use HTTP::Request;
+# use Data::Dumper;
 use CGI;
 my $query = new CGI;
 my $user_id = $query->param('user_id');
@@ -10,7 +11,6 @@ use LWP::UserAgent;
 my $ua = LWP::UserAgent->new;
 my $servidor = "http://localhost:8080/api/usuarios/".$user_id;
 
-print $servidor;
  
 # set custom HTTP request header fields
 my $req = HTTP::Request->new(DELETE => $servidor);
@@ -29,15 +29,22 @@ print "Content-type: text/html\n";
 print "
   <html>
   <head>
-    <title>Listado de usuarios</title>
-    <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
+    <title>Eliminar usuario</title>
+    <link rel='stylesheet' type='text/css' href='./static/css/bootstrap.min.css'>
   </head>
   <body>";
 my $message = $resp->decoded_content; 
-print '$resp->message: '.$resp->message."\n"; 
-print "Received reply: $message\n";	
+# print '$resp->message: '.$resp->message."\n"; 
+# print "Received reply: $message";	
+
+$texto = decode_json($message);
+# print  Dumper($texto);
+print $texto->{'message'};
 	
-print "</body>";
+print "
+    </br>
+    <a href='index.pl' class=''>Volver al listado</a>
+    </body>";
 
 # if ($resp->is_success) {
 #     my $message = $resp->decoded_content;
