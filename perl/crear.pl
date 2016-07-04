@@ -1,4 +1,11 @@
-print <<IMPRIMIR
+#!/usr/bin/perl
+
+print "Content-type: text/html\n";
+print "<html><head>\n
+           <title>Listado de usaurios</title>
+           <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
+         </head>\n";
+print '<body>
 <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
 
 <div class="jumbotron">
@@ -23,4 +30,7 @@ print <<IMPRIMIR
     <button type="submit" class="btn btn-primary">Crear usuario </button>
   </form>
   <a href="index.php" class="btn btn-primary">Volver a listado</a>
-IMPRIMIR;
+
+
+</body>';
+print "</html>";
