@@ -7,6 +7,8 @@
   $json_data = json_decode($result->response);
  ?>
 
+<link rel="stylesheet" type="text/css" href="./static/css/bootstrap.min.css">
+
   <a href="index.php">Indice</a>
 
   <table class="table table-bordered">
@@ -15,7 +17,7 @@
   <th>Nombres</th>
   <th>Apellidos</th>
   <tr>
-    <td><a href="editar.php?id=<?php echo $_GET['id'] //$listado->_id ?>">Editar </a></td>
+    <td><a href="editar.php?id=<?php echo $_GET['id'] //$listado->_id ?>" class=" fa fa-pencil">Editar </a></td>
     <td><?php echo $json_data->email?></td>
     <td><?php echo $json_data->nombres?></td>
     <td><?php echo $json_data->apellidos?></td>
