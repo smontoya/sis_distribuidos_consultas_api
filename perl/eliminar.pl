@@ -26,13 +26,18 @@ my $resp = $ua->request($req);
 # print $resp->message;
 
 print "Content-type: text/html\n";
-print "<html><head>\n
-           <title>Listado de usaurios</title>
-           <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
-         </head>
-	<body>
-	$resp
-	</body>";
+print "
+  <html>
+  <head>
+    <title>Listado de usuarios</title>
+    <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
+  </head>
+  <body>";
+my $message = $resp->decoded_content; 
+print '$resp->message: '.$resp->message."\n"; 
+print "Received reply: $message\n";	
+	
+print "</body>";
 
 # if ($resp->is_success) {
 #     my $message = $resp->decoded_content;
