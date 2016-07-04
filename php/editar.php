@@ -22,19 +22,25 @@
 
  ?>
 
-  <a href="index.php">Indice</a>
+<link rel="stylesheet" type="text/css" href="./static/css/bootstrap.min.css">
 
-  <form method="post" name="formActualizar" />
-	  <input type="hidden" id="id" name="id" value="<?php $json_data->_id ?>">
-    <table class="table table-bordered">
-    <th>Email</th>
-    <th>Nombres</th>
-    <th>Apellidos</th>
-    <tr>
-      <td><input type="text" name="email" value="<?php echo $json_data->email?>" /></td>
-      <td><input type="text" name="nombres" value="<?php echo $json_data->nombres?>" /></td>
-      <td><input type="text" name="apellidos" value="<?php echo $json_data->apellidos?>" /></td>
-    </tr>
-    </table>
-    <input type="submit" value="Actualizar datos">
+  <a href="index.php">Indice</a>
+  <form method="post" name="formActualizar" class="well" />
+    <input type="hidden" id="id" name="id" value="<?php $json_data->_id ?>">
+    <div class="row">
+      <label class="col-md-3">Email</label>
+      <input class="col-md-8" type="text" name="email" value="<?php echo $json_data->email?>" />
+    </div>
+    
+    <div class="row">
+      <label class="col-md-3">Nombres</label>
+      <input class="col-md-8" type="text" name="nombres" value="<?php echo $json_data->nombres?>" />
+    </div>
+    
+    <div class="row">
+      <label class="col-md-3">Apellidos</label>
+      <input class="col-md-8" type="text" name="apellidos" value="<?php echo $json_data->apellidos?>" />
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Actualizar usuario</button>
   </form>
