@@ -4,33 +4,33 @@ print "Content-type: text/html\n";
 print "<html><head>\n
            <title>Listado de usaurios</title>
            <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
-         </head>\n";
-print '<body>
-<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+         </head>
+	<body>
+<link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
 
-<div class="jumbotron">
+<div class='jumbotron'>
 <h1>Crear usuario</h1>  
 </div>
-  <form method="post" name="formActualizar" class="well" />
-    <div class="row">
-      <label class="col-md-3">Email</label>
-      <input class="col-md-8" type="text" name="email"  />
+  <form method='post' name='formActualizar' class='well' />
+    <div class='row'>
+      <label class='col-md-3'>Email</label>
+      <input class='col-md-8' type='text' name='email'  />
     </div>
     
-    <div class="row">
-      <label class="col-md-3">Nombres</label>
-      <input class="col-md-8" type="text" name="nombres"  />
+    <div class='row'>
+      <label class='col-md-3'>Nombres</label>
+      <input class='col-md-8' type='text' name='nombres'  />
     </div>
     
-    <div class="row">
-      <label class="col-md-3">Apellidos</label>
-      <input class="col-md-8" type="text" name="apellidos"  />
+    <div class='row'>
+      <label class='col-md-3'>Apellidos</label>
+      <input class='col-md-8' type='text' name='apellidos'  />
     </div>
     
-    <button type="submit" class="btn btn-primary">Crear usuario </button>
+    <button type='submit' class='btn btn-primary'>Crear usuario </button>
   </form>
-  <a href="index.php" class="btn btn-primary">Volver a listado</a>
+  <a href='index.pl' class='btn btn-primary'>Volver a listado</a>
 
 
-</body>';
+</body>";
 print "</html>";
