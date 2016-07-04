@@ -19,10 +19,20 @@ my $req = HTTP::Request->new(DELETE => $servidor);
 
 # add POST data to HTTP request body
 my $post_data = '{ "_id": "'.$user_id.'" }';
-$req->content($post_data);
+# print $req->message( );
+ 
  
 my $resp = $ua->request($req);
-print $resp->message;
+# print $resp->message;
+
+print "Content-type: text/html\n";
+print "<html><head>\n
+           <title>Listado de usaurios</title>
+           <link rel='stylesheet' type='text/css' href='/static/css/bootstrap.min.css'>
+         </head>
+	<body>
+	$resp
+	</body>";
 
 # if ($resp->is_success) {
 #     my $message = $resp->decoded_content;
