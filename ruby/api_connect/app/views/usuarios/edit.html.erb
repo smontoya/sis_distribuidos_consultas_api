@@ -1,0 +1,21 @@
+<h1>Editar usuario</h1>
+<%= form_for :usuario do |f| %>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email, :value => @usuario["email"] %>
+  </p>
+ 
+  <p>
+    <%= f.label :nombres %><br>
+    <%= f.text_field :nombres, :value => @usuario["nombres"] %>
+  </p>
+ 
+   <p>
+    <%= f.label :apellidos %><br>
+    <%= f.text_field :apellidos , :value => @usuario["apellidos"]%>
+  </p>
+
+  <p>
+    <%= f.submit :'Actualizar usuario' %>
+  </p>
+<% end %>

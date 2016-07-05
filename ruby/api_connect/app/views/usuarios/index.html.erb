@@ -1,0 +1,21 @@
+<table class="table table-bordered">
+  <tr>
+    <th></th>
+    <th>Email</th>
+    <th>nombres</th>
+    <th>Apellidos</th>
+  </tr>
+<% @data.each do |usuario| %>
+  <tr>
+    <td>
+      <%= link_to "Ver", usuario_path(usuario["_id"]), :class =>"btn" %>
+      <%= link_to "Editar", edit_usuario_path(usuario["_id"]), :class =>"btn"  %>
+      <%= link_to "Eliminar", usuario["_id"], method: :delete, data: { confirm: "¿Está seguro?" }, :class =>"btn"  %>
+    </td>
+    <td><%= usuario["email"] %></td>
+    <td><%= usuario["nombres"] %></td>
+    <td><%= usuario["apellidos"] %></td>
+
+  </tr>
+<% end %>
+</table>
