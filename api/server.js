@@ -33,6 +33,7 @@ router.get('/', function(req, res) {
 
 router.route('/usuarios')
   .post(function(req, res) {
+    console.log("POST")
     var usuario = new Usuario();
     if (req.body.email) usuario.email = req.body.email
     if (req.body.nombres) usuario.nombres = req.body.nombres
@@ -48,6 +49,8 @@ router.route('/usuarios')
     });       
   })
   .get(function(req, res) {
+    console.log("GET all")
+
     Usuario.find(function(err, usuarios) {
       if(err) res.send(err);
       res.json(usuarios);
@@ -56,6 +59,8 @@ router.route('/usuarios')
 
 router.route('/usuarios/:usuario_id')
   .get(function(req, res) {
+    console.log("get :user_id")
+
     Usuario.findById(req.params.usuario_id, function(err, usuario) {
       if (err)
           res.send(err);
@@ -63,6 +68,8 @@ router.route('/usuarios/:usuario_id')
     });
   })
   .put(function(req, res) {
+    console.log("PUT : user_id")
+
     Usuario.findById(req.params.usuario_id, function(err, usuario) {
       if (err) res.send(err);
       if (req.body.email) usuario.email = req.body.email
@@ -79,6 +86,8 @@ router.route('/usuarios/:usuario_id')
     });
   })
   .delete(function(req, res) {
+    console.log("DELETE : user_id")
+
       Usuario.remove({
           _id: req.params.usuario_id
       }, function(err, usuario) {

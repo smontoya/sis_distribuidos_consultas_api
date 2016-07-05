@@ -11,12 +11,7 @@ type User struct {
     id string `json:"_id"`
     email string `json:"email"`
     nombres string `json:"nombres"`
-    apellidos string `json:"apellidos"`
-    
-}
-type UserApiResp struct {
-    
-    Users []User `json:"users"`
+    apellidos string `json:"apellidos"`    
 }
 
 func getJson(url string, target interface{}) error {
@@ -25,7 +20,8 @@ func getJson(url string, target interface{}) error {
         return err
     }
     defer r.Body.Close()
-    fmt.Println("data:", r.Body);
+    
+    println(r)
     return json.NewDecoder(r.Body).Decode(target)
 }
 
@@ -36,14 +32,14 @@ func index(w http.ResponseWriter, r *http.Request) {
     users := []*User{}
     getJson(url, users)
 
-    for user := range users {
-        println(user)
+    //for user := range users {
+      //  println(user)
         // Create a new pointer to response Struct
         /*r := new(respStruct)*/
 
         // Get user with id i into the newly created response struct
         
-    }
+    //}
     /*//resp := &respUser{}
     users, err := api.Res("usuarios").Get()
     if err != nil {
